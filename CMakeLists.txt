@@ -20,7 +20,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QT_PACKAGE_NAME Qt5 CACHE STRING "Set Qt package name, i.e. Qt5 or Qt6.")
 
-find_package(vsg 1.1.2)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(vsgMacros)
+
+find_package(vsg)
 
 vsg_setup_dir_vars()
 vsg_setup_build_vars()
